@@ -1,0 +1,130 @@
+//Fonts
+body
+	font-family: 'Source Sans Pro', sans-serif
+h1,h2,h3,h4,h5
+	font-family: 'Oswald', sans-serif
+
+//Logo
+div.logotext
+	background: #FFAD14
+	text-align: right
+	position: relative
+	width: 340px
+	margin: 70px auto 50px auto
+	img.logotext
+		margin-right: -20px
+	.logout
+		position: absolute
+		top: -60px
+		right: 0px
+img.logo
+	position: absolute
+	width: 150px
+	height: auto
+	top: -45px
+	left: -10px
+
+//Login
+div.login
+	border: 1px solid #EEE
+	padding: 50px 20px
+	border-radius: 5px
+	box-shadow: 0 0 10px 0 #DDD
+	input
+		border: 1px solid #EEE
+		border-radius: 5px
+	button.small
+		margin: 20px auto 0px auto
+		position: relative
+		display: block
+		width: 200px
+
+//Nav
+.nav
+	text-align: right
+	.primary
+		float: left
+
+//Data
+table.dbs 	
+	thead
+		background: #FFAD14
+		th
+			color: white
+	i
+		font-size: 25px
+		margin-left: 5px
+		cursor: pointer
+		&.fi-x
+			color: darkred
+		&.fi-pencil
+			color: #999
+	td, th
+		text-align: center
+
+
+//New
+body.new
+	label
+		cursor: auto
+	h3
+		text-align: center
+	span.light
+		color: #BBB
+		word-break: break-all
+		strong
+			color: black
+	div.text-center
+		margin-top: 15px
+	ul.fields
+		margin-left: 0px
+		padding: 10px 0px
+		background: #999
+		list-style-type: none
+		width: 100%
+		min-height: 200px
+		display: block
+		z-index: 1
+		&[data-purpose=hidden]
+			li
+				background-color: rgba(215, 215, 215, 0.5)
+				background: rgba(215, 215, 215, 0.5)
+		&[data-purpose=shown]
+			li
+				background-color: rgba(233, 150, 61, 0.9)
+				background: rgba(233, 150, 61, 0.9)			
+		&[data-purpose=details]
+			li
+				background-color: rgba(233, 150, 61, 0.5)
+				background: rgba(233, 150, 61, 0.5)
+		li
+			color: black
+			z-index: 2
+			padding: 2% 5%
+			text-align: center
+			display: inline-block
+			width: 95%
+			margin: 2% 2.5%
+			border-radius: 5px
+
+//Misc.
+div.alert-box
+	width: 100%
+	position: fixed
+	z-index: 3
+	margin-top: 0px!important
+
+//Utility classes
+.button.primary, button.primary
+	background: #FFAD14
+	&:active, &:hover
+		background: #D69213
+	&:disabled
+		background: #BF871F
+.button.neg, button.neg
+	background: #999
+	&:active, &:hover
+		background: #666
+.alert-box.error
+	background: darkred
+	border: darken(darkred,10%)
