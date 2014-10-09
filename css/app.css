@@ -6153,6 +6153,12 @@ div.login {
   .nav .primary {
     float: left; }
 
+.pac.reveal-modal, dialog.pac {
+  background: black;
+  overflow: hidden; }
+  .pac.reveal-modal img, dialog.pac img {
+    position: relative; }
+
 table.dbs thead {
   background: #FFAD14; }
   table.dbs thead th {
@@ -6165,8 +6171,63 @@ table.dbs i {
     color: darkred; }
   table.dbs i.fi-pencil {
     color: #999; }
+  table.dbs i.fi-refresh {
+    color: darkgreen; }
 table.dbs td, table.dbs th {
   text-align: center; }
+
+.reveal-modal.edit .message, dialog.edit .message {
+  display: none;
+  text-align: center;
+  background: #FAF2D4;
+  color: #999; }
+  .reveal-modal.edit .message a, dialog.edit .message a {
+    color: #999;
+    font-weight: bold; }
+  .reveal-modal.edit .message.alert, dialog.edit .message.alert {
+    background: #FAD4D4;
+    color: #BF7373; }
+.reveal-modal.edit label, dialog.edit label {
+  font-size: 16px; }
+.reveal-modal.edit input, dialog.edit input {
+  font-size: 16px;
+  width: 100%;
+  display: block;
+  color: #999;
+  padding: 7px 5px; }
+.reveal-modal.edit div.fields, dialog.edit div.fields {
+  margin-top: 15px;
+  width: 40%;
+  margin-left: 5%;
+  display: inline-block;
+  float: left; }
+  .reveal-modal.edit div.fields h2, dialog.edit div.fields h2 {
+    text-align: center; }
+.reveal-modal.edit .buttons, dialog.edit .buttons {
+  clear: both;
+  text-align: center; }
+
+.reveal-modal.edit ul.fields, dialog.edit ul.fields, body.new ul.fields {
+  padding: 10px 0px;
+  background: #999;
+  list-style-type: none;
+  min-height: 200px;
+  z-index: 1; }
+  .reveal-modal.edit ul.fields li, dialog.edit ul.fields li, body.new ul.fields li {
+    color: black;
+    z-index: 2;
+    padding: 2% 5%;
+    text-align: center;
+    display: inline-block;
+    width: 95%;
+    margin: 2% 2.5%;
+    border-radius: 5px; }
+  .reveal-modal.edit ul.fields[data-purpose=shown] li, dialog.edit ul.fields[data-purpose=shown] li, body.new ul.fields[data-purpose=shown] li {
+    background-color: rgba(233, 150, 61, 0.9);
+    background: rgba(233, 150, 61, 0.9); }
+  .reveal-modal.edit ul.fields[data-purpose=details] li, dialog.edit ul.fields[data-purpose=details] li, body.new ul.fields[data-purpose=details] li {
+    background-color: rgba(233, 150, 61, 0.5);
+    background: rgba(233, 150, 61, 0.5); }
 
 body.new label {
   cursor: auto; }
@@ -6181,31 +6242,8 @@ body.new div.text-center {
   margin-top: 15px; }
 body.new ul.fields {
   margin-left: 0px;
-  padding: 10px 0px;
-  background: #999;
-  list-style-type: none;
   width: 100%;
-  min-height: 200px;
-  display: block;
-  z-index: 1; }
-  body.new ul.fields[data-purpose=hidden] li {
-    background-color: rgba(215, 215, 215, 0.5);
-    background: rgba(215, 215, 215, 0.5); }
-  body.new ul.fields[data-purpose=shown] li {
-    background-color: rgba(233, 150, 61, 0.9);
-    background: rgba(233, 150, 61, 0.9); }
-  body.new ul.fields[data-purpose=details] li {
-    background-color: rgba(233, 150, 61, 0.5);
-    background: rgba(233, 150, 61, 0.5); }
-  body.new ul.fields li {
-    color: black;
-    z-index: 2;
-    padding: 2% 5%;
-    text-align: center;
-    display: inline-block;
-    width: 95%;
-    margin: 2% 2.5%;
-    border-radius: 5px; }
+  display: block; }
 
 div.alert-box {
   width: 100%;

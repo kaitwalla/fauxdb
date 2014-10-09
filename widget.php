@@ -4,7 +4,7 @@
  <script type="text/javascript" src="//cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
  <script src="http://projects.ydr.com/fauxdb/js/jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
  <link rel="stylesheet" href="//cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css" />
- <link rel="stylesheet" href="http://projects.ydr.com/fauxdb/css/jquery.modal.css" type="text/css" media="screen" />
+ <link rel="stylesheet" href="<?=$v['projects_url']?>/css/jquery.modal.css" type="text/css" media="screen" />
    <div class="start" style="text-align:center; font-family: sans-serif; background:white; display:none;">
    <input type="text" class="dbSearch" value="<?=$v['search_text']?>" />
    <a style="background:#2c3e50;" class="search">Search</a><a style="background:#BBB;">View all</a>

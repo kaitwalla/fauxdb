@@ -28,9 +28,11 @@ $(function() {
 						}
 						$('input[name=gdoc_id]').prop('disabled',true);
 						scrollTo($('button[data-purpose=step1]'),$('.step2'));
+						var allfields = array();
 						for (var i = 0; i < d.length; i++) {
 							$target = $('ul.fields').eq(0);
 							$('<li data-field='+i+'>'+d[i]+'</li>').appendTo($target);
+							allfields.push(d[i]);
 						}
 						$('ul.fields').sortable({connectWith:"ul.fields"}).disableSelection();
 						$('input[name=ajax]').remove();
@@ -54,14 +56,26 @@ $(function() {
 			$('input').each(function() {
 				data[$(this).attr('name')] = $(this).val();
 			});
+			data.fields.all = allfields;
+			data.fields.selected = array();
+			selected_num = 0;
 			$('.fields').each(function() {
 				data.fields[$(this).attr('data-purpose')] = [];
 				fieldarr = data.fields[$(this).attr('data-purpose')];
+				curr = $(this).attr('data-purpose');
 				$(this).children('li').each(function(field) {
-					fieldarr.push($(this).attr('data-field'));
+					if (curr !== 'hidden') {
+						data.fields.selected.push($(this).attr('data-field'));
+						fieldarr.push(selected_num);
+						selected_num++;
+					}
+					else {
+						fieldarr.push($(this).attr('data-field'));
+					}
 				});
-			})
-			data = encodeURI(JSON.stringify(data));
+			});
+			stuff = data;
+			/*data = encodeURI(JSON.stringify(data));
 			stuff = data;
 			$.ajax({
 				url: 'fauxly.php?purpose=add&data='+data,
@@ -74,7 +88,7 @@ $(function() {
 						alert_user(d,true);
 					}
 				}
-			});
+			});*/
 		}
 		else {
 			msg.type = 'error';
@@ -137,5 +151,6 @@ function alert_user(msg,timeout) {
 	}
 };
 
+var allfields;
 var stuff;
 var $msg = false;

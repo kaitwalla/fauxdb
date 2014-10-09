@@ -45,6 +45,13 @@ div.login
 	.primary
 		float: left
 
+//Loading
+.pac.reveal-modal
+	background: black
+	overflow: hidden
+	img
+		position: relative
+
 //Data
 table.dbs 	
 	thead
@@ -59,9 +66,68 @@ table.dbs
 			color: darkred
 		&.fi-pencil
 			color: #999
+		&.fi-refresh
+			color: darkgreen
 	td, th
 		text-align: center
 
+//Editing
+.reveal-modal.edit
+	.message
+		display: none
+		a
+			color: #999
+			font-weight: bold
+		text-align: center
+		background: #FAF2D4
+		color: #999
+		&.alert
+			background: #FAD4D4
+			color: #BF7373
+	label
+		font-size: 16px
+	input
+		font-size: 16px
+		width: 100%
+		display: block
+		color: #999
+		padding: 7px 5px
+	div.fields
+		margin-top: 15px
+		width: 40%
+		margin-left: 5%
+		display: inline-block
+		float: left
+		h2
+			text-align: center
+	.buttons
+		clear: both
+		text-align: center
+
+.reveal-modal.edit,body.new
+	ul.fields
+		padding: 10px 0px
+		background: #999
+		list-style-type: none
+		min-height: 200px
+		z-index: 1
+		li
+			color: black
+			z-index: 2
+			padding: 2% 5%
+			text-align: center
+			display: inline-block
+			width: 95%
+			margin: 2% 2.5%
+			border-radius: 5px
+		&[data-purpose=shown]
+			li
+				background-color: rgba(233, 150, 61, 0.9)
+				background: rgba(233, 150, 61, 0.9)			
+		&[data-purpose=details]
+			li
+				background-color: rgba(233, 150, 61, 0.5)
+				background: rgba(233, 150, 61, 0.5)
 
 //New
 body.new
@@ -78,34 +144,8 @@ body.new
 		margin-top: 15px
 	ul.fields
 		margin-left: 0px
-		padding: 10px 0px
-		background: #999
-		list-style-type: none
 		width: 100%
-		min-height: 200px
 		display: block
-		z-index: 1
-		&[data-purpose=hidden]
-			li
-				background-color: rgba(215, 215, 215, 0.5)
-				background: rgba(215, 215, 215, 0.5)
-		&[data-purpose=shown]
-			li
-				background-color: rgba(233, 150, 61, 0.9)
-				background: rgba(233, 150, 61, 0.9)			
-		&[data-purpose=details]
-			li
-				background-color: rgba(233, 150, 61, 0.5)
-				background: rgba(233, 150, 61, 0.5)
-		li
-			color: black
-			z-index: 2
-			padding: 2% 5%
-			text-align: center
-			display: inline-block
-			width: 95%
-			margin: 2% 2.5%
-			border-radius: 5px
 
 //Misc.
 div.alert-box
